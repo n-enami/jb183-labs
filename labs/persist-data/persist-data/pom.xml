@@ -126,7 +126,7 @@
         <!-- Import the CDI API, we use provided scope as the API is included in
             JBoss EAP -->
         <dependency>
-            <groupId>javax.enterprise</groupId>
+            <groupId>jakarta.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <scope>provided</scope>
         </dependency>
@@ -134,24 +134,24 @@
         <!-- Import the Common Annotations API (JSR-250), we use provided scope
             as the API is included in JBoss EAP -->
         <dependency>
-            <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <groupId>org.jboss.spec.jakarta.annotation</groupId>
+            <artifactId>jboss-annotations-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Import the JAX-RS API, we use provided scope as the API is included
             in JBoss EAP -->
         <dependency>
-            <groupId>org.jboss.spec.javax.ws.rs</groupId>
-            <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
+            <groupId>org.jboss.spec.jakarta.ws.rs</groupId>
+            <artifactId>jboss-jaxrs-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Import the JPA API, we use provided scope as the API is included in
             JBoss EAP -->
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <groupId>org.hibernate.jakarta.persistence</groupId>
+            <artifactId>hibernate-jpa-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -199,14 +199,14 @@
         <!-- Import the JSF API, we use provided scope as the API is included in
             JBoss EAP -->
         <dependency>
-            <groupId>org.jboss.spec.javax.faces</groupId>
-            <artifactId>jboss-jsf-api_2.2_spec</artifactId>
+            <groupId>org.jboss.spec.jakarta.faces</groupId>
+            <artifactId>jboss-jsf-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
-	    <groupId>org.jboss.spec.javax.servlet</groupId>
-	    <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+	    <groupId>org.jboss.spec.jakarta.servlet</groupId>
+	    <artifactId>jboss-servlet-api</artifactId>
 	    <scope>provided</scope>
 	</dependency>
 
