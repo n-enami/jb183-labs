@@ -152,7 +152,7 @@
             JBoss EAP -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.2-api</artifactId>
+            <artifactId>hibernate-jpa-3.0-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
