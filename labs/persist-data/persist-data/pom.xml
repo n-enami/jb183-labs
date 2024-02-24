@@ -31,7 +31,9 @@
 	<!--
 	  <version.jboss.bom.eap>7.0.2.GA</version.jboss.bom.eap>
 	  -->
-	<version>7.4.0.GA</version>
+<!-- 	<version>7.4.0.GA</version> -->
+
+        <version.server.bom>7.4.9.GA</version.server.bom>
 	  
 	<!-- other plug-in versions -->
 	<version.surefire.plugin>2.10</version.surefire.plugin>
