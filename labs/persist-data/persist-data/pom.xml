@@ -13,8 +13,50 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  
+	<!-- Explicitly declaring the source encoding eliminates the following
+	message: -->
+	<!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered
+	resources, i.e. build is platform dependent! -->
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	
+	<!-- JBoss dependency versions -->
+	
+	<version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
+	
+	<!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
+	<version.jboss.bom.eap>7.0.2.GA</version.jboss.bom.eap>
+	
+	<!-- other plug-in versions -->
+	<version.surefire.plugin>2.10</version.surefire.plugin>
+	<version.war.plugin>3.3.2</version.war.plugin>
+	
+	<!-- maven-compiler-plugin -->
+	<maven.compiler.target>1.8</maven.compiler.target>
+	<maven.compiler.source>1.8</maven.compiler.source>
   </properties>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.bom</groupId>
+				<artifactId>jboss-eap-javaee7-with-tools</artifactId>
+				<version>${version.jboss.bom.eap}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+	
+			<dependency>
+				<groupId>org.jboss.eap</groupId>
+				<artifactId>wildfly-ejb-client-bom</artifactId>
+				<version>7.0.2.GA-redhat-1</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+	
+		</dependencies>
+	</dependencyManagement>
+	
     <dependencies>
 	<!-- ・Fatal error compiling: java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException: javax.xml.bind.JAXBException
 	　https://www.google.com/search?q=+Fatal+error+compiling%3A+java.lang.NoClassDefFoundError%3A+javax%2Fxml%2Fbind%2FJAXBException%3A+javax.xml.bind.JAXBException&sca_esv=dcdc2d0f0896c7ba&rlz=1C1GCEU_jaJP985JP985&sxsrf=ACQVn09ber_pArv8J_cAcnE7BaV0aKgNUQ%3A1708760110633&ei=LpzZZeOmJtzj1e8Pp7-6wAE&ved=0ahUKEwjj9Zm7u8OEAxXccfUHHaefDhgQ4dUDCBA&uact=5&oq=+Fatal+error+compiling%3A+java.lang.NoClassDefFoundError%3A+javax%2Fxml%2Fbind%2FJAXBException%3A+javax.xml.bind.JAXBException&gs_lp=Egxnd3Mtd2l6LXNlcnAiciBGYXRhbCBlcnJvciBjb21waWxpbmc6IGphdmEubGFuZy5Ob0NsYXNzRGVmRm91bmRFcnJvcjogamF2YXgveG1sL2JpbmQvSkFYQkV4Y2VwdGlvbjogamF2YXgueG1sLmJpbmQuSkFYQkV4Y2VwdGlvbkgAUABYAHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCYAwCSBwA&sclient=gws-wiz-serp
