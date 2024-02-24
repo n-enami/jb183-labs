@@ -31,8 +31,7 @@
 	<!--
 	  <version.jboss.bom.eap>7.0.2.GA</version.jboss.bom.eap>
 	  -->
-<!-- 	<version>7.4.0.GA</version> -->
-	<version>37</version>	 
+	<version>7.4.0.GA</version>
 	  
 	<!-- other plug-in versions -->
 	<version.surefire.plugin>2.10</version.surefire.plugin>
@@ -43,6 +42,66 @@
 	<maven.compiler.source>1.8</maven.compiler.source>
   </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- importing the jakartaee8-with-tools BOM adds specs and other useful artifacts as managed dependencies -->
+            <dependency>
+                <groupId>org.jboss.bom</groupId>
+                <artifactId>jboss-eap-jakartaee8-with-tools</artifactId>
+                <version>${version.server.bom}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+	
+    <profiles>
+        <profile>
+            <!-- When built in OpenShift the 'openshift' profile will be
+                used when invoking mvn. -->
+            <!-- Use this profile for any OpenShift specific customization
+                your app will ne    ed. -->
+            <id>openshift</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <configuration>
+                            <warName>ROOT</warName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <repositories>
+        <repository>
+            <id>jboss-enterprise-maven-repository</id>
+            <name>JBoss Enterprise Maven Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+        </repository>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss-enterprise-maven-repository</id>
+            <name>JBoss Enterprise Maven Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <!-- Copy from C:\GitRep\SampleProject\Red Hat\@GitRep\eap7-with-postgres\pom.xml -->
+	
     <dependencies>
 	<!-- ・Fatal error compiling: java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException: javax.xml.bind.JAXBException
 	　https://www.google.com/search?q=+Fatal+error+compiling%3A+java.lang.NoClassDefFoundError%3A+javax%2Fxml%2Fbind%2FJAXBException%3A+javax.xml.bind.JAXBException&sca_esv=dcdc2d0f0896c7ba&rlz=1C1GCEU_jaJP985JP985&sxsrf=ACQVn09ber_pArv8J_cAcnE7BaV0aKgNUQ%3A1708760110633&ei=LpzZZeOmJtzj1e8Pp7-6wAE&ved=0ahUKEwjj9Zm7u8OEAxXccfUHHaefDhgQ4dUDCBA&uact=5&oq=+Fatal+error+compiling%3A+java.lang.NoClassDefFoundError%3A+javax%2Fxml%2Fbind%2FJAXBException%3A+javax.xml.bind.JAXBException&gs_lp=Egxnd3Mtd2l6LXNlcnAiciBGYXRhbCBlcnJvciBjb21waWxpbmc6IGphdmEubGFuZy5Ob0NsYXNzRGVmRm91bmRFcnJvcjogamF2YXgveG1sL2JpbmQvSkFYQkV4Y2VwdGlvbjogamF2YXgueG1sLmJpbmQuSkFYQkV4Y2VwdGlvbkgAUABYAHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCYAwCSBwA&sclient=gws-wiz-serp
