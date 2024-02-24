@@ -138,15 +138,9 @@
 	    <groupId>org.jboss.spec.javax.annotation</groupId>
 	    <artifactId>jboss-annotations-api_1.2_spec</artifactId>
 	    <version>1.0.2.Final</version>
+            <scope>provided</scope>
 	</dependency>
 	    
-	<dependency>
-            <groupId>org.jboss.spec.jakartax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
-            <version>2.2.3</version>
-            <scope>provided</scope>
-        </dependency>
-
         <!-- Import the JAX-RS API, we use provided scope as the API is included
             in JBoss EAP -->
 	<!-- https://central.sonatype.com/artifact/org.jboss.spec.javax.ws.rs/jboss-jaxrs-api_2.0_spec -->
@@ -154,6 +148,7 @@
 	    <groupId>org.jboss.spec.javax.ws.rs</groupId>
 	    <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
 	    <version>1.0.1.Final</version>
+	    <scope>provided</scope>
 	</dependency>
 
         <!-- Import the JPA API, we use provided scope as the API is included in
@@ -162,15 +157,20 @@
 	    <groupId>jakarta.persistence</groupId>
 	    <artifactId>jakarta.persistence-api</artifactId>
 	    <version>2.2.3</version>
+            <scope>provided</scope>
 	</dependency>
 
         <!-- Annotation processor that raising compilation errors whenever constraint
             annotations are incorrectly used. -->
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator-annotation-processor</artifactId>
-            <scope>provided</scope>
-        </dependency>
+	<!--  https://central.sonatype.com/artifact/org.hibernate/hibernate-validator-annotation-processor -->
+	<!-- 5.2.4.Final-redhat-1 -->
+	<!-- https://repo1.maven.org/maven2/org/hibernate/hibernate-validator-annotation-processor/5.4.1.Final/ -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator-annotation-processor</artifactId>
+	    <version>5.2.4.Final-redhat-1</version>
+	    <scope>provided</scope>
+	</dependency>
 	    
         <!-- Import the EJB API, we use provided scope as the API is included in
             JBoss EAP -->
@@ -189,36 +189,29 @@
         <!-- Bean Validation Implementation -->
         <!-- Provides portable constraints such as @Email -->
         <!-- Hibernate Validator is shipped in JBoss EAP -->
-<!--         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency> -->
-        <!-- Bean Validation Implementation 
-             Provides portable constraints such as @Email 
-             Hibernate Validator is shipped in JBoss EAP -->
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <scope>provided</scope>
-        </dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>5.2.4.Final</version>
+	    <scope>provided</scope>
+		    <exclusions>
+			<exclusion>
+			    <groupId>org.slf4j</groupId>
+				    <artifactId>slf4j-api</artifactId>
+			</exclusion>
+		    </exclusions>
+	</dependency>
 	    
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-search-orm</artifactId>
-                 <scope>provided</scope>
+                <scope>provided</scope>
             </dependency>
 
              <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
-                 <scope>provided</scope>
+                <scope>provided</scope>
             </dependency>
 
         <!-- Import the JSF API, we use provided scope as the API is included in
@@ -228,6 +221,7 @@
 	    <groupId>org.jboss.spec.javax.faces</groupId>
 	    <artifactId>jboss-jsf-api_2.2_spec</artifactId>
 	    <version>2.2.14</version>
+	    <scope>provided</scope>
 	</dependency>
 
 	<!--  https://central.sonatype.com/artifact/org.jboss.spec.javax.servlet/jboss-servlet-api_3.1_spec -->
@@ -235,6 +229,7 @@
 	    <groupId>org.jboss.spec.javax.servlet</groupId>
 	    <artifactId>jboss-servlet-api_3.1_spec</artifactId>
 	    <version>1.0.2.Final</version>
+	    <scope>provided</scope>
 	</dependency>
 
         <!-- Annotation processor to generate the JPA metamodel classes for
