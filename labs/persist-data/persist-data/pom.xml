@@ -151,8 +151,8 @@
         <!-- Import the JPA API, we use provided scope as the API is included in
             JBoss EAP -->
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-3.0-api</artifactId>
+            <groupId>org.hibernate.jakarta.persistence</groupId>
+            <artifactId>hibernate-jpa-2.2-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
