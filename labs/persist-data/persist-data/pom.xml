@@ -135,7 +135,7 @@
             as the API is included in JBoss EAP -->
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -144,7 +144,7 @@
             in JBoss EAP -->
         <dependency>
             <groupId>org.jboss.spec.javax.ws.rs</groupId>
-            <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
+            <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -152,7 +152,7 @@
             JBoss EAP -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <artifactId>hibernate-jpa-2.2-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -209,13 +209,13 @@
             JBoss EAP -->
         <dependency>
             <groupId>org.jboss.spec.javax.faces</groupId>
-            <artifactId>jboss-jsf-api_2.2_spec</artifactId>
+            <artifactId>jboss-jsf-api_2.3_spec</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
 	    <groupId>org.jboss.spec.javax.servlet</groupId>
-	    <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+	    <artifactId>jboss-servlet-api_4.0_spec</artifactId>
 	    <scope>provided</scope>
 	</dependency>
 
