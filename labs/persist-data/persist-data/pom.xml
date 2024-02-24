@@ -16,7 +16,21 @@
   </properties>
 
     <dependencies>
-
+	<!-- ・Fatal error compiling: java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException: javax.xml.bind.JAXBException
+	　https://www.google.com/search?q=+Fatal+error+compiling%3A+java.lang.NoClassDefFoundError%3A+javax%2Fxml%2Fbind%2FJAXBException%3A+javax.xml.bind.JAXBException&sca_esv=dcdc2d0f0896c7ba&rlz=1C1GCEU_jaJP985JP985&sxsrf=ACQVn09ber_pArv8J_cAcnE7BaV0aKgNUQ%3A1708760110633&ei=LpzZZeOmJtzj1e8Pp7-6wAE&ved=0ahUKEwjj9Zm7u8OEAxXccfUHHaefDhgQ4dUDCBA&uact=5&oq=+Fatal+error+compiling%3A+java.lang.NoClassDefFoundError%3A+javax%2Fxml%2Fbind%2FJAXBException%3A+javax.xml.bind.JAXBException&gs_lp=Egxnd3Mtd2l6LXNlcnAiciBGYXRhbCBlcnJvciBjb21waWxpbmc6IGphdmEubGFuZy5Ob0NsYXNzRGVmRm91bmRFcnJvcjogamF2YXgveG1sL2JpbmQvSkFYQkV4Y2VwdGlvbjogamF2YXgueG1sLmJpbmQuSkFYQkV4Y2VwdGlvbkgAUABYAHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCYAwCSBwA&sclient=gws-wiz-serp
+	・java.lang.ClassNotFoundException: javax.xml.bind.JAXBException と来た時の対応
+	　https://qiita.com/ukiuni@github/items/bf6b14e9aa1090ec4a75
+	・java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverterエラーがでる
+	　https://qiita.com/Sicut_study/items/01a2ba9dd45aa464054f
+	・【Java】解決！NoClassDefFoundError: javax/xml/bind/JAXBExceptionの対処方法
+	　https://tech.omablo.com/archives/1270
+	・java.lang.NoClassDefFoundError を解決する方法: javax/xml/bind/JAXBException
+	　https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception	 -->
+	<dependency>
+	    <groupId>javax.xml.bind</groupId>
+	    <artifactId>jaxb-api</artifactId>
+	    <version>2.3.0</version>
+	</dependency>
         <!-- First declare the APIs we depend on and need for compilation. All
             of them are provided by JBoss EAP -->
 
