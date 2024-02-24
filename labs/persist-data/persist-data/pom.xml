@@ -5,10 +5,17 @@
   <name>Persist Data web app Project</name>
   <description>This is the persist-data project</description>
   <parent>
-  	<groupId>com.redhat.training</groupId>
+<!--   	<groupId>com.redhat.training</groupId>
   	<artifactId>parent-pom</artifactId>
   	<version>1.0</version>
-  	<relativePath>../../pom.xml</relativePath>
+  	<relativePath>../../pom.xml</relativePath> -->
+        <groupId>org.jboss</groupId>
+        <artifactId>jboss-parent</artifactId>
+	<!--
+	  <version>37</version>
+	  -->
+	<version>7.4.0.GA</version>
+       
   </parent>
 
   <properties>
@@ -25,8 +32,11 @@
 	<version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
 	
 	<!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
-	<version.jboss.bom.eap>7.0.2.GA</version.jboss.bom.eap>
-	
+	<!--
+	  <version.jboss.bom.eap>7.0.2.GA</version.jboss.bom.eap>
+	  -->
+	<version>7.4.0.GA</version>
+	  
 	<!-- other plug-in versions -->
 	<version.surefire.plugin>2.10</version.surefire.plugin>
 	<version.war.plugin>3.3.2</version.war.plugin>
