@@ -127,31 +127,32 @@
             JBoss EAP -->
         <dependency>
             <groupId>jakarta.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Import the Common Annotations API (JSR-250), we use provided scope
             as the API is included in JBoss EAP -->
         <dependency>
-            <groupId>org.jboss.spec.jakarta.annotation</groupId>
-            <artifactId>jboss-annotations-api</artifactId>
+            <groupId>org.jboss.spec.javax.annotation</groupId>
+            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
+
 
         <!-- Import the JAX-RS API, we use provided scope as the API is included
             in JBoss EAP -->
         <dependency>
-            <groupId>org.jboss.spec.jakarta.ws.rs</groupId>
-            <artifactId>jboss-jaxrs-api</artifactId>
+            <groupId>org.jboss.spec.javax.ws.rs</groupId>
+            <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Import the JPA API, we use provided scope as the API is included in
             JBoss EAP -->
         <dependency>
-            <groupId>org.hibernate.jakarta.persistence</groupId>
-            <artifactId>hibernate-jpa-api</artifactId>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -172,7 +173,7 @@
         <!-- Bean Validation Implementation -->
         <!-- Provides portable constraints such as @Email -->
         <!-- Hibernate Validator is shipped in JBoss EAP -->
-        <dependency>
+<!--         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <scope>provided</scope>
@@ -182,8 +183,16 @@
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency> -->
+        <!-- Bean Validation Implementation 
+             Provides portable constraints such as @Email 
+             Hibernate Validator is shipped in JBoss EAP -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <scope>provided</scope>
         </dependency>
-
+	    
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-search-orm</artifactId>
@@ -199,16 +208,17 @@
         <!-- Import the JSF API, we use provided scope as the API is included in
             JBoss EAP -->
         <dependency>
-            <groupId>org.jboss.spec.jakarta.faces</groupId>
-            <artifactId>jboss-jsf-api</artifactId>
+            <groupId>org.jboss.spec.javax.faces</groupId>
+            <artifactId>jboss-jsf-api_2.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
-	    <groupId>org.jboss.spec.jakarta.servlet</groupId>
-	    <artifactId>jboss-servlet-api</artifactId>
+	    <groupId>org.jboss.spec.javax.servlet</groupId>
+	    <artifactId>jboss-servlet-api_3.1_spec</artifactId>
 	    <scope>provided</scope>
 	</dependency>
+
 
         <!-- Annotation processor to generate the JPA metamodel classes for
             typesafe criteria queries -->
