@@ -8,7 +8,7 @@
   	<groupId>com.redhat.training</groupId>
   	<artifactId>parent-pom</artifactId>
   	<version>1.0</version>
-  	<relativePath>../pom.xml</relativePath>
+<!--   	<relativePath>../pom.xml</relativePath> -->
   </parent>
 
   <properties>
@@ -144,7 +144,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>${version.war.plugin}</version>
+                <version>3.3.2</version>
                 <extensions>false</extensions>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
